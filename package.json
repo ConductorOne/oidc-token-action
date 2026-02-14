@@ -1,0 +1,28 @@
+{
+  "name": "conductorone-oidc-token-action",
+  "version": "1.0.0",
+  "description": "Exchange GitHub Actions OIDC token for ConductorOne access token",
+  "type": "module",
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "node esbuild.config.mjs",
+    "lint": "eslint src/",
+    "all": "npm run lint && npm run build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/conductorone/oidc-token-action"
+  },
+  "license": "Apache-2.0",
+  "dependencies": {
+    "@actions/core": "^1.11.1",
+    "@actions/http-client": "^2.2.3"
+  },
+  "devDependencies": {
+    "@types/node": "^22.0.0",
+    "esbuild": "^0.25.0",
+    "typescript": "^5.9.3",
+    "typescript-eslint": "^8.55.0",
+    "eslint": "^9.39.2"
+  }
+}

@@ -1,0 +1,19 @@
+name: 'ConductorOne OIDC Token'
+description: 'Exchange a GitHub Actions OIDC token for a ConductorOne access token via workload federation'
+branding:
+  icon: 'shield'
+  color: 'purple'
+inputs:
+  audience:
+    description: 'ConductorOne tenant domain (e.g. acme.conductorone.com)'
+    required: true
+  client_id:
+    description: 'Workload federation trust client ID (e.g. clever-fox@acme.conductorone.com/wfe)'
+    required: true
+outputs:
+  access_token:
+    description: 'ConductorOne access token'
+runs:
+  using: node20
+  main: dist/index.js
+  post: dist/cleanup.js
