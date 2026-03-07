@@ -4,7 +4,7 @@ const shared = {
     bundle: true,
     platform: 'node',
     target: 'node20',
-    format: 'esm',
+    format: 'cjs',
     sourcemap: true,
     minify: false,
 };

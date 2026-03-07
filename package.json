@@ -2,7 +2,6 @@
   "name": "conductorone-oidc-token-action",
   "version": "1.0.0",
   "description": "Exchange GitHub Actions OIDC token for ConductorOne access token",
-  "type": "module",
   "main": "dist/index.js",
   "scripts": {
     "build": "node esbuild.config.mjs",
