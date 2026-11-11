@@ -1,6 +1,6 @@
 # ConductorOne OIDC Token Action
 
-Exchange a GitHub Actions OIDC token for a ConductorOne access token via [workload federation](https://www.conductorone.com/docs/workload-federation).
+Exchange a GitHub Actions OIDC token for a ConductorOne access token via [workload federation](https://www.c1.ai/docs/product/admin/service-principals/workload-federation).
 
 This enables secretless authentication from GitHub Actions to ConductorOne — no stored API keys required.
 
