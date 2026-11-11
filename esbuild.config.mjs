@@ -3,7 +3,7 @@ import { build } from 'esbuild';
 const shared = {
     bundle: true,
     platform: 'node',
-    target: 'node20',
+    target: 'node24',
     format: 'cjs',
     sourcemap: true,
     minify: false,

@@ -14,6 +14,6 @@ outputs:
   access_token:
     description: 'ConductorOne access token'
 runs:
-  using: node20
+  using: node24
   main: dist/index.js
   post: dist/cleanup.js

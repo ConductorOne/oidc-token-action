@@ -6,22 +6,30 @@
   "scripts": {
     "build": "node esbuild.config.mjs",
     "lint": "eslint src/",
-    "all": "npm run lint && npm run build"
+    "typecheck": "tsc --noEmit",
+    "test": "node --test tests/*.test.mjs",
+    "all": "npm run lint && npm run typecheck && npm run build && npm test"
   },
   "repository": {
     "type": "git",
     "url": "https://github.com/conductorone/oidc-token-action"
   },
   "license": "Apache-2.0",
+  "engines": {
+    "node": ">=24"
+  },
   "dependencies": {
-    "@actions/core": "^1.11.1",
-    "@actions/http-client": "^2.2.3"
+    "@actions/core": "^3.0.1",
+    "@actions/http-client": "^4.0.1"
   },
   "devDependencies": {
-    "@types/node": "^22.0.0",
-    "esbuild": "^0.25.0",
-    "typescript": "^5.9.3",
-    "typescript-eslint": "^8.55.0",
-    "eslint": "^9.39.2"
+    "@types/node": "^24.19.2",
+    "esbuild": "^0.28.2",
+    "typescript": "~6.0.3",
+    "typescript-eslint": "^8.72.2",
+    "eslint": "^10.14.0"
+  },
+  "overrides": {
+    "minimatch@^10.0.0": "^11.0.8"
   }
 }
