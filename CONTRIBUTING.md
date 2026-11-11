@@ -10,13 +10,13 @@ For an overview of the project, we recommend starting by reading the [README](./
 
 ### Prerequisites
 
-- Node.js 20 or later
+- Node.js 24 (the GitHub Actions runtime)
 - npm
 
 ### Setup
 
 ```sh
-npm install
+npm ci
 ```
 
 ### Build
@@ -33,10 +33,24 @@ This uses esbuild to bundle `src/index.ts` and `src/cleanup.ts` into `dist/`. Th
 npm run lint
 ```
 
+### Type-check and test
+
+```sh
+npm run typecheck
+npm run build
+npm test
+```
+
+The tests execute the standalone bundles with local token endpoint fixtures; they do not require live GitHub or ConductorOne credentials. Run `npm run all` for lint, type-check, build, and tests together.
+
+Keep TypeScript within the versions supported by `typescript-eslint` when upgrading dependencies.
+
+The `minimatch` override updates the lint tooling's v10 dependency to patched v11 to address [GHSA-g3hv-75wg-m249](https://github.com/advisories/GHSA-g3hv-75wg-m249). Remove it once ESLint and typescript-eslint depend on a patched version themselves; validate lint file discovery when changing it.
+
 ### Making changes
 
 1. Edit the TypeScript source files in `src/`.
-2. Run `npm run build` to regenerate `dist/`.
+2. Run `npm run all` to validate changes and regenerate `dist/`.
 3. Commit both the source changes and the updated `dist/` files.
 
 The CI workflow will fail if `dist/` is out of date.

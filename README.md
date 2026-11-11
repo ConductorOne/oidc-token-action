@@ -8,6 +8,7 @@ This enables secretless authentication from GitHub Actions to ConductorOne — n
 
 1. A ConductorOne service principal with a workload federation trust configured for GitHub Actions
 2. The workflow must have `id-token: write` permission
+3. Self-hosted runners must support the Node.js 24 action runtime (Actions Runner v2.327.1 or later)
 
 ## Usage
 
@@ -33,7 +34,7 @@ jobs:
       - run: cone whoami
 
       # Use with Terraform
-      - uses: hashicorp/setup-terraform@v3
+      - uses: hashicorp/setup-terraform@v4
       - run: terraform apply
 
       # Use with curl
